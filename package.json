@@ -1,0 +1,23 @@
+{
+  "name": "project-hydrator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "hydrator": "./src/cli/index.js",
+    "hydrator-debug": "./src/cli/debug.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "fs-extra": "^2.0.0",
+    "glob": "^7.1.1",
+    "lodash": "^4.17.4",
+    "optionator": "^0.8.2",
+    "rejection-js": "^1.0.3"
+  }
+}
