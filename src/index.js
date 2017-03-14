@@ -11,12 +11,14 @@ const OptionBuilder = require('./options');
 function dehydrate(targetFolder) {
     const options = {
         nodir: true,
-        cwd: targetFolder
+        cwd: targetFolder,
+        dot: true
     };
 
     const files = glob.sync("**/*", options);
 
     const data = _.reduce(files, (current, file) => {
+        console.log(file);
         current.push({
             filePath: file,
             contents: fs.readFileSync(file).toString()
@@ -37,6 +39,7 @@ function rehydrate(file, targetFolder) {
     const data = JSON.parse(fs.readFileSync(file).toString());
 
     _.forEach(data, (file) => {
+        console.log(file);
         const path = Path.join(targetFolder, folderName, file.filePath);
 
         fs.ensureFileSync(path);
