@@ -39,7 +39,7 @@ function rehydrate(file, targetFolder) {
     const data = JSON.parse(fs.readFileSync(file).toString());
 
     _.forEach(data, (file) => {
-        console.log(file);
+        console.log(file.filePath);
         const path = Path.join(targetFolder, folderName, file.filePath);
 
         fs.ensureFileSync(path);
